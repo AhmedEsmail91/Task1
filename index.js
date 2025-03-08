@@ -8,7 +8,9 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT
 app.use(express.json())
+// using bootstrap function to add routes
 bootstrap(app);
+
 connection.sync({ alter: true }).then(() => {
     console.log(chalk.blue('DB Connection has been established successfully.'));
 }).catch((error) => {

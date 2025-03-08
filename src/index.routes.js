@@ -1,7 +1,7 @@
 import { globalError } from './middlewares/globalError.js';
 import productRoutes from './modules/product/product.routes.js'
 import categoryRoutes from './modules/category/category.routes.js'
-
+import {getCategoryProducts} from './modules/category/category.controller.js'
 export const bootstrap=(app)=>{
     app.use('/products',productRoutes);
     app.use('/categories',categoryRoutes);

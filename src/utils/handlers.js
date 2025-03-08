@@ -1,5 +1,5 @@
-const { catchError } = require('../../../E-Commerce-Node-main/src/middlewares/catchError.js');
-const db = require('./db'); // Assuming you have a db module to interact with your database
+import { catchError } from '../middlewares/catchError.js';
+import connection from '../database/dbConnection.js';
 
 const findAll = async (dbModel) => {
     try {
@@ -33,7 +33,7 @@ const insertOne = catchError(async (dbModel, document) => {
     return result;
 });
 
-module.exports = {
+export default {
     findAll,
     findOne,
     deleteOne,

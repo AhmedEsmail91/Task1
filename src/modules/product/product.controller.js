@@ -22,7 +22,7 @@ export const getProductById = catchError(async (req, res, next) => {
 export const getAllProducts = catchError(async (req, res, next) => {
     const products = await productModel.findAll({
         include: [{
-            model: categoryModel,
+            model: categoryModel,// eager loading
             attributes: ['name']
         }],
         attributes:{exclude:['category_id']}
